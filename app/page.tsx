@@ -1,101 +1,211 @@
-import Image from "next/image";
+import Link from "next/link";
+import Logo from "@/components/Logo";
 
 export default function Home() {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">
-              app/page.tsx
-            </code>
-            .
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
-
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+    <div className="min-h-screen bg-gradient-to-b from-secondary-1000 to-brandDark-900">
+      {/* Navigation */}
+      <nav className="border-b border-gray-800">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex items-center justify-between h-16">
+            <Logo />
+            <div className="flex gap-4">
+              <Link 
+                href="/login" 
+                className="text-gray-300 hover:text-white transition-colors"
+              >
+                Login
+              </Link>
+            </div>
+          </div>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
+      </nav>
+
+      {/* Hero Section */}
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-20 pb-16">
+        <div className="text-center">
+          <h1 className="text-4xl sm:text-5xl font-bold text-white mb-6">
+            Secure Cloud Storage for Your
+            <span className="text-brandLight-400"> CCTV Recordings</span>
+          </h1>
+          <p className="text-lg sm:text-xl text-gray-400 mb-8 max-w-2xl mx-auto">
+            Never lose important footage again. Store your surveillance recordings securely in the cloud with automated backup and easy access.
+          </p>
+          <div className="flex gap-4 justify-center">
+            <Link 
+              href="/login" 
+              className="bg-brandLight-400 hover:bg-brandLight-300 text-brandDark-900 px-6 py-3 rounded-lg font-semibold transition-colors"
+            >
+              Get Started
+            </Link>
+            <Link 
+              href="#features" 
+              className="border border-brandLight-400 text-brandLight-400 px-6 py-3 rounded-lg font-semibold hover:bg-brandLight-400/10 transition-colors"
+            >
+              Learn More
+            </Link>
+          </div>
+        </div>
+      </div>
+
+      {/* Features Section */}
+      <div id="features" className="py-20 bg-brandDark-800/50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="text-3xl font-bold text-center text-white mb-12">
+            Why Choose CloudCamz?
+          </h2>
+          <div className="grid md:grid-cols-3 gap-8">
+            {features.map((feature, index) => (
+              <div key={index} className="bg-brandDark-900 p-6 rounded-xl border border-gray-800">
+                <div className="w-12 h-12 bg-brandLight-400/10 rounded-lg flex items-center justify-center mb-4">
+                  <feature.icon className="w-6 h-6 text-brandLight-400" />
+                </div>
+                <h3 className="text-xl font-semibold text-white mb-2">{feature.title}</h3>
+                <p className="text-gray-400">{feature.description}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      {/* How It Works */}
+      <div className="py-20">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="text-3xl font-bold text-center text-white mb-12">
+            Simple 3-Step Setup
+          </h2>
+          <div className="grid md:grid-cols-3 gap-8">
+            {steps.map((step, index) => (
+              <div key={index} className="text-center">
+                <div className="w-12 h-12 bg-brandLight-400 rounded-full flex items-center justify-center mx-auto mb-4 text-brandDark-900 font-bold">
+                  {index + 1}
+                </div>
+                <h3 className="text-xl font-semibold text-white mb-2">{step.title}</h3>
+                <p className="text-gray-400">{step.description}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      {/* CTA Section */}
+      <div className="py-20 bg-brandDark-800/50">
+        <div className="max-w-3xl mx-auto text-center px-4 sm:px-6 lg:px-8">
+          <h2 className="text-3xl font-bold text-white mb-4">
+            Ready to Secure Your Footage?
+          </h2>
+          <p className="text-gray-400 mb-8">
+            Join businesses that trust CloudCamz for their surveillance storage needs.
+          </p>
+          <Link 
+            href="/signup" 
+            className="inline-block bg-brandLight-400 hover:bg-brandLight-300 text-brandDark-900 px-8 py-3 rounded-lg font-semibold transition-colors"
+          >
+            Get Started
+          </Link>
+        </div>
+      </div>
+
+      {/* Footer */}
+      <footer className="py-8 border-t border-gray-800">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex flex-col items-center justify-center gap-2">
+            <Logo />
+            <p className="text-gray-400 text-sm text-center">
+              © {new Date().getFullYear()} CloudCamz. All rights reserved.
+            </p>
+            <p className="text-gray-500 text-sm text-center">
+              Developed with ❤️ by <a href="https://github.com/msalmankhokhar" className="text-brandLight-400 hover:text-brandLight-300 transition-colors">Salman Khokhar</a>
+            </p>
+            <p className="text-gray-500 text-sm text-center">
+              (Under Development)
+            </p>
+          </div>
+        </div>
       </footer>
     </div>
+  );
+}
+
+const features = [
+  {
+    title: "Secure Storage",
+    description: "Enterprise-grade encryption and secure cloud storage for your sensitive footage.",
+    icon: LockIcon,
+  },
+  {
+    title: "Easy Access",
+    description: "Access your recordings anytime, anywhere through our web interface.",
+    icon: DeviceIcon,
+  },
+  {
+    title: "Automatic Backup",
+    description: "Set and forget - automatic backup of your CCTV recordings.",
+    icon: CloudIcon,
+  },
+];
+
+const steps = [
+  {
+    title: "Install Desktop Client",
+    description: "Download and install our lightweight Windows application.",
+  },
+  {
+    title: "Connect Cameras",
+    description: "Connect your CCTV cameras through our simple interface.",
+  },
+  {
+    title: "Start Backing Up",
+    description: "Your footage is automatically stored in the cloud.",
+  },
+];
+
+// Icon components with proper TypeScript interface
+interface IconProps {
+  className?: string;
+}
+
+function LockIcon({ className }: IconProps) {
+  return (
+    <svg 
+      xmlns="http://www.w3.org/2000/svg" 
+      fill="none" 
+      viewBox="0 0 24 24" 
+      strokeWidth={1.5} 
+      stroke="currentColor" 
+      className={className}
+    >
+      <path strokeLinecap="round" strokeLinejoin="round" d="M16.5 10.5V6.75a4.5 4.5 0 1 0-9 0v3.75m-.75 11.25h10.5a2.25 2.25 0 0 0 2.25-2.25v-6.75a2.25 2.25 0 0 0-2.25-2.25H6.75a2.25 2.25 0 0 0-2.25 2.25v6.75a2.25 2.25 0 0 0 2.25 2.25Z" />
+    </svg>
+  );
+}
+
+function DeviceIcon({ className }: IconProps) {
+  return (
+    <svg 
+      xmlns="http://www.w3.org/2000/svg" 
+      fill="none" 
+      viewBox="0 0 24 24" 
+      strokeWidth={1.5} 
+      stroke="currentColor" 
+      className={className}
+    >
+      <path strokeLinecap="round" strokeLinejoin="round" d="M9 17.25v1.007a3 3 0 0 1-.879 2.122L7.5 21h9l-.621-.621A3 3 0 0 1 15 18.257V17.25m6-12V15a2.25 2.25 0 0 1-2.25 2.25H5.25A2.25 2.25 0 0 1 3 15V5.25m18 0A2.25 2.25 0 0 0 18.75 3H5.25A2.25 2.25 0 0 0 3 5.25m18 0V12a2.25 2.25 0 0 1-2.25 2.25H5.25A2.25 2.25 0 0 1 3 12V5.25" />
+    </svg>
+  );
+}
+
+function CloudIcon({ className }: IconProps) {
+  return (
+    <svg 
+      xmlns="http://www.w3.org/2000/svg" 
+      fill="none" 
+      viewBox="0 0 24 24" 
+      strokeWidth={1.5} 
+      stroke="currentColor" 
+      className={className}
+    >
+      <path strokeLinecap="round" strokeLinejoin="round" d="M12 16.5V9.75m0 0 3 3m-3-3-3 3M6.75 19.5a4.5 4.5 0 0 1-1.41-8.775 5.25 5.25 0 0 1 10.233-2.33 3 3 0 0 1 3.758 3.848A3.752 3.752 0 0 1 18 19.5H6.75Z" />
+    </svg>
   );
 }
