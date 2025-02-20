@@ -46,6 +46,9 @@ export default {
           1000: '#1C1F25',
         }
       },
+      backgroundImage: {
+        'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
+      },
     },
   },
   plugins: [],

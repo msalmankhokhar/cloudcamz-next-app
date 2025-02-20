@@ -1,6 +1,7 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import React from 'react'
+import { PrimaryButton } from './Button'
 
 interface AuthContentProps {
     type: 'login' | 'signup'
@@ -9,7 +10,7 @@ interface AuthContentProps {
 export default function AuthContent({ type }: AuthContentProps) {
     return (
         <>
-            <h1 className="text-center text-xl mt-2 mb-2 text-white">
+            <h1 className="text-center font-bold text-xl mt-2 mb-2 text-white">
                 {
                     type === 'login' ? 'Login to Your Account' : 'Create Your Account'
                 }
@@ -47,11 +48,11 @@ export default function AuthContent({ type }: AuthContentProps) {
             </form>
 
             <div className="mt-1">
-                <button className="bg-brandLight-400 transition-colors duration-200 hover:bg-brandLight-300 w-full py-2.5 text-sm px-4 mt-3 rounded-md font-medium">
+                <PrimaryButton type="submit" className="w-full py-2.5 text-sm px-4 mt-3">
                     {
                         type === 'login' ? 'Login' : 'Create Account'
                     }
-                </button>
+                </PrimaryButton>
 
                 <div className="relative my-5">
                     <div className="absolute inset-0 flex items-center">
