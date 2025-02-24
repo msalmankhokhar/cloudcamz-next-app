@@ -1,27 +1,13 @@
 import Logo from "@/components/Logo";
 import { HeroPattern } from "@/components/BackgroundPattern";
 import { PrimaryButton, SecondaryButton } from '@/components/Button'
-import Link from "next/link";
+import Navbar from "@/components/dashboard/Navbar";
 
 export default function Home() {
   return (
-    <div className="relative min-h-screen bg-gradient-to-b from-secondary-1000 to-brandDark-900">
+    <>
       {/* Navigation */}
-      <nav className="border-b border-gray-700">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center justify-between h-16">
-            <Logo />
-            <div className="flex gap-4">
-              <Link 
-                href="/login" 
-                className="text-gray-300 hover:text-white transition-colors"
-              >
-                Log In
-              </Link>
-            </div>
-          </div>
-        </div>
-      </nav>
+      <Navbar />
 
       {/* Hero Section */}
       <div className="relative isolate">
@@ -71,7 +57,7 @@ export default function Home() {
       {/* How It Works */}
       <div className="relative isolate py-20">
         <div className="absolute inset-0 -z-10">
-          <div className="h-full w-full" 
+          <div className="h-full w-full"
             style={{
               backgroundImage: `
                 linear-gradient(90deg, rgb(131 189 213 / 0.03) 1px, transparent 0),
@@ -131,7 +117,7 @@ export default function Home() {
           </div>
         </div>
       </footer>
-    </div>
+    </>
   );
 }
 
@@ -175,12 +161,12 @@ interface IconProps {
 
 function LockIcon({ className }: IconProps) {
   return (
-    <svg 
-      xmlns="http://www.w3.org/2000/svg" 
-      fill="none" 
-      viewBox="0 0 24 24" 
-      strokeWidth={1.5} 
-      stroke="currentColor" 
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      fill="none"
+      viewBox="0 0 24 24"
+      strokeWidth={1.5}
+      stroke="currentColor"
       className={className}
     >
       <path strokeLinecap="round" strokeLinejoin="round" d="M16.5 10.5V6.75a4.5 4.5 0 1 0-9 0v3.75m-.75 11.25h10.5a2.25 2.25 0 0 0 2.25-2.25v-6.75a2.25 2.25 0 0 0-2.25-2.25H6.75a2.25 2.25 0 0 0-2.25 2.25v6.75a2.25 2.25 0 0 0 2.25 2.25Z" />
@@ -190,12 +176,12 @@ function LockIcon({ className }: IconProps) {
 
 function DeviceIcon({ className }: IconProps) {
   return (
-    <svg 
-      xmlns="http://www.w3.org/2000/svg" 
-      fill="none" 
-      viewBox="0 0 24 24" 
-      strokeWidth={1.5} 
-      stroke="currentColor" 
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      fill="none"
+      viewBox="0 0 24 24"
+      strokeWidth={1.5}
+      stroke="currentColor"
       className={className}
     >
       <path strokeLinecap="round" strokeLinejoin="round" d="M9 17.25v1.007a3 3 0 0 1-.879 2.122L7.5 21h9l-.621-.621A3 3 0 0 1 15 18.257V17.25m6-12V15a2.25 2.25 0 0 1-2.25 2.25H5.25A2.25 2.25 0 0 1 3 15V5.25m18 0A2.25 2.25 0 0 0 18.75 3H5.25A2.25 2.25 0 0 0 3 5.25m18 0V12a2.25 2.25 0 0 1-2.25 2.25H5.25A2.25 2.25 0 0 1 3 12V5.25" />
@@ -205,12 +191,12 @@ function DeviceIcon({ className }: IconProps) {
 
 function CloudIcon({ className }: IconProps) {
   return (
-    <svg 
-      xmlns="http://www.w3.org/2000/svg" 
-      fill="none" 
-      viewBox="0 0 24 24" 
-      strokeWidth={1.5} 
-      stroke="currentColor" 
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      fill="none"
+      viewBox="0 0 24 24"
+      strokeWidth={1.5}
+      stroke="currentColor"
       className={className}
     >
       <path strokeLinecap="round" strokeLinejoin="round" d="M12 16.5V9.75m0 0 3 3m-3-3-3 3M6.75 19.5a4.5 4.5 0 0 1-1.41-8.775 5.25 5.25 0 0 1 10.233-2.33 3 3 0 0 1 3.758 3.848A3.752 3.752 0 0 1 18 19.5H6.75Z" />

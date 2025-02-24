@@ -1,10 +1,11 @@
 import type { Metadata } from "next";
 import { DM_Sans as Font } from "next/font/google";
 import "./globals.css";
+import { ClerkProvider } from "@clerk/nextjs";
 
 const font = Font({
   subsets: ['latin'],
-  weight: [ '300', '400', '500', '600', '700', '800' ]
+  weight: ['300', '400', '500', '600', '700', '800']
 })
 
 export const metadata: Metadata = {
@@ -30,7 +31,11 @@ export default function RootLayout({
   return (
     <html lang="en" style={{ scrollBehavior: "smooth" }}>
       <body className={`${font.className} antialiased`}>
-        {children}
+        <ClerkProvider>
+        <div className="relative min-h-screen bg-gradient-to-b from-secondary-1000 to-brandDark-900">
+          {children}
+        </div>
+        </ClerkProvider>
       </body>
     </html>
   );

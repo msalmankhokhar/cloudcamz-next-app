@@ -2,7 +2,7 @@ import { HeroPattern } from '@/components/BackgroundPattern'
 import Logo from '@/components/Logo'
 import React from 'react'
 
-export default function AuthLayout({children}: Readonly<{children: React.ReactNode}>) {
+export default function AuthLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
     <div className="flex min-h-screen">
       {/* Left Panel */}
@@ -11,7 +11,7 @@ export default function AuthLayout({children}: Readonly<{children: React.ReactNo
           <HeroPattern />
           <div className="absolute inset-0 bg-gradient-to-r from-brandDark-900 to-transparent"></div>
         </div>
-        
+
         <div className="relative z-10 max-w-xl mx-auto text-center">
           <Logo />
           <h2 className="mt-8 text-3xl font-bold text-white">
@@ -20,7 +20,7 @@ export default function AuthLayout({children}: Readonly<{children: React.ReactNo
           <p className="mt-4 text-lg text-gray-300">
             Access your surveillance recordings anytime, anywhere. Keep your premises secure with automated cloud backup.
           </p>
-          
+
           <div className="mt-8 grid grid-cols-2 gap-4">
             <div className="p-4 bg-brandDark-900/50 rounded-lg border border-gray-700">
               <h3 className="text-brandLight-400 font-semibold">Automated Backup</h3>
@@ -37,7 +37,12 @@ export default function AuthLayout({children}: Readonly<{children: React.ReactNo
       {/* Right Panel - Auth Form */}
       <main className="flex-1 bg-secondary-1000 flex items-center justify-center p-4">
         <div className="w-full max-w-md">
-          <div className="bg-brandDark-900 py-8 px-5 border rounded-xl border-gray-700">
+
+          {/* Removed 
+            bg-brandDark-900 border p-5 
+          */}
+          
+          <div className=" flex flex-col items-center rounded-2xl border-gray-700">
             <div className="lg:hidden text-center mb-6">
               <Logo />
             </div>
